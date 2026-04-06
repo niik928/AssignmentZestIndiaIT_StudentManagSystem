@@ -19,6 +19,9 @@ It provides REST APIs for managing students with secure authentication.
 - Global Exception Handling
 - Swagger API Documentation
 
+## 🔐 Security
+- Passwords are encrypted using BCryptPasswordEncoder
+- JWT token is used for API authentication
 ---
 
 ## 🛠 Tech Stack
@@ -62,4 +65,13 @@ It provides REST APIs for managing students with secure authentication.
 - PUT /api/students/{id}
 - DELETE /api/students/{id}
 
+## 📌 API Documentation
+Swagger URL: Swagger URL:
+http://localhost:8080/swagger-ui/index.html
+
+## 🛠️ How to Run Project
+1. Clone repository
+2. Configure MySQL database
+3. Run Spring Boot application
+4. Open Swagger URL
 --
