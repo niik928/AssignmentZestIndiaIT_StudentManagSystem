@@ -17,12 +17,12 @@ public class JwtUtil {
     @Value("${jwt.expiration}")
     private long expiration;
 
-    // ✅ SINGLE KEY METHOD (FIXED)
+    // SINGLE KEY METHOD (FIXED)
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(secret.getBytes());
     }
 
-    // ✅ Generate Token
+    //  Generate Token
     public String generateToken(String username) {
         return Jwts.builder()
                 .setSubject(username)
@@ -32,7 +32,7 @@ public class JwtUtil {
                 .compact();
     }
 
-    // ✅ Validate Token
+    // Validate Token
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder()
@@ -45,7 +45,7 @@ public class JwtUtil {
         }
     }
 
-    // ✅ Extract Username
+    // Extract Username
     public String extractUsername(String token) {
         Claims claims = Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())

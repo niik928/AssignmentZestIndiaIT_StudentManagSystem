@@ -33,7 +33,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String path = request.getRequestURI();
 
-        // ✅ Allow public endpoints FIRST
+        // Allow public endpoints FIRST
         if (path.startsWith("/api/auth") ||
                 path.startsWith("/swagger-ui") ||
                 path.startsWith("/v3/api-docs") ||
@@ -43,7 +43,7 @@ public class JwtFilter extends OncePerRequestFilter {
             return;
         }
 
-        // ✅ Read Authorization header
+        // Read Authorization header
         String authHeader = request.getHeader("Authorization");
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
